@@ -7,7 +7,6 @@ class BrowseURL
   public static void main(String args[]) throws Exception
  {
   String foo = JOptionPane.showInputDialog(null,"Enter a website you want to go to!", "Enter URL here!");
-  Sasdfasdfasdf
  Desktop d=Desktop.getDesktop();
 
  if (foo.matches(".*http://.*")) {

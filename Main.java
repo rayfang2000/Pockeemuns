@@ -1,4 +1,4 @@
-package roughdraft;
+
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 public class roughdraft {
 //introduction function
-	public static void introduction() {
+	public void introduction() {
 		int k =1;
 		//START OF INTRODUCTION
 		while(k!=0)
@@ -59,19 +59,6 @@ public class roughdraft {
 		}
 		//END OF CHOOSING POKEMEN.
 	}
-// main function
-	public static void main(String[] args) {
-		String title= JOptionPane.showInputDialog("Welcome to the game! \n If you want to load a save, enter your access checkpoint!\n Otherwise, you can type in anything to start a new game.");
-		switch (title) {
-		case "paly": 
-			rd test = new rd();
-			rd.introduction();
-			break;
-		default:
-			JOptionPane.showInputDialog("Welcome to the game of- POKEMANS!");
-		}
-		rd test = new rd();
-		rd.introduction();
-		}
-	}
+}
 
+	

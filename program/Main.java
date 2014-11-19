@@ -31,15 +31,15 @@ public class roughdraft {
 		
 	    if(r.equalsIgnoreCase("charmander"))
 	    {
-
+		r="Charmander";
 	    }
 	    else if(r.equalsIgnoreCase("bulbasaur"))
 	    {
-
+		r="Bulbasaur";
 	    }
 	    else if(r.equalsIgnoreCase("squirtle"))
 	    {
-
+		r="Squirtle";
 	   	 	String confirmsq = JOptionPane.showInputDialog("You have chosen " +r+", are you sure? 'Yes' or 'no'?");
 	   	 	if (confirmsq.equalsIgnoreCase("no")) {
 	   	 		k=0;

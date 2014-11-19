@@ -58,6 +58,7 @@ public class roughdraft {
 	    }
 		}
 		//END OF CHOOSING POKEMEN.
+		//remember, player's name is 'name', rival's name is 'rivalname', pokemon is 'r'
 	}
 }
 

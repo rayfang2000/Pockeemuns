@@ -27,6 +27,14 @@ public class GUIprogram extends JFrame {
 		setResizable( false );
 		setLayout(flo);
 		JButton checkpoints = new JButton("Play!");
+		checkpoints.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				JOptionPane.showMessageDialog(null, "Button not working");
+			
+			}
+		});
 		JButton test = new JButton("New Game!");
 		test.addActionListener(new ActionListener() {
 			@Override
@@ -51,15 +59,28 @@ public class GUIprogram extends JFrame {
 				} catch (IOException | URISyntaxException e1) {
 					e1.printStackTrace();
 				}
-            	System.exit(0);
+            	
             }
         });
+		JButton exit = new JButton("Exit");
+		exit.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				System.exit(0);
+			}
+
+		
+				
+			});
+			
 		add(pageLabel);
 		add(test);
 		add(test1);
 		add(save);
 		add(checkpoint);
 		add(checkpoints);
+		add(exit);
 		
 		setVisible(true);
 	}

@@ -31,15 +31,37 @@ public class roughdraft {
 		
 	    if(r.equalsIgnoreCase("charmander"))
 	    {
-		r="Charmander";
+	    	r="Charmander";
+	    	String confirmsq = JOptionPane.showInputDialog("You have chosen " +r+", are you sure? 'Yes' or 'no'?");
+	   	 	if (confirmsq.equalsIgnoreCase("no")) {
+	   	 		k=0;
+	   	 	}
+	   	 	else if(confirmsq.equalsIgnoreCase("yes")){
+	   	 	JOptionPane.showMessageDialog(null, "You and your " + r +" will now spend the rest of your far journey together!");
+	   	 		k=1;
+	   	 	}
+	   	 	else {
+	   	 		k=0;
+	   	 	}
 	    }
 	    else if(r.equalsIgnoreCase("bulbasaur"))
 	    {
-		r="Bulbasaur";
+	    	r="Bulbasaur";
+	    	String confirmsq = JOptionPane.showInputDialog("You have chosen " +r+", are you sure? 'Yes' or 'no'?");
+	   	 	if (confirmsq.equalsIgnoreCase("no")) {
+	   	 		k=0;
+	   	 	}
+	   	 	else if(confirmsq.equalsIgnoreCase("yes")){
+	   	 	JOptionPane.showMessageDialog(null, "You and your " + r +" will now spend the rest of your far journey together!");
+	   	 		k=1;
+	   	 	}
+	   	 	else {
+	   	 		k=0;
+	   	 	}
 	    }
 	    else if(r.equalsIgnoreCase("squirtle"))
 	    {
-		r="Squirtle";
+
 	   	 	String confirmsq = JOptionPane.showInputDialog("You have chosen " +r+", are you sure? 'Yes' or 'no'?");
 	   	 	if (confirmsq.equalsIgnoreCase("no")) {
 	   	 		k=0;
@@ -58,7 +80,6 @@ public class roughdraft {
 	    }
 		}
 		//END OF CHOOSING POKEMEN.
-		//remember, player's name is 'name', rival's name is 'rivalname', pokemon is 'r'
 	}
 }
 

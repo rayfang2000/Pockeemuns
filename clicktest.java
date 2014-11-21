@@ -10,18 +10,14 @@ import javax.swing.UIManager;
 
 
 public class clicktest extends JFrame implements ActionListener{
-	//int clicked right here!
 	int clicked = 0;
 	public void clicktest() {
-		//to conver the int into a string because JLabel does not pick up ints.
 		 String aString = Integer.toString(clicked);
-		 //USELESS JUNK:
-		setTitle("Click counter for proj 28");
+		setTitle("Pokeemun attack mechanics");
 		setSize(450,125);
 		JLabel save = new JLabel();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			FlowLayout flo = new FlowLayout();
-		//BUTTON TO CLICK SO IT WILL INCREMENT INT CLICKED.
 		JButton button  = new JButton("ATTACK!");
 		JLabel pageLabel = new JLabel(aString, (int)JLabel.CENTER_ALIGNMENT);
 		button.addActionListener(new ActionListener() {
@@ -34,10 +30,6 @@ public class clicktest extends JFrame implements ActionListener{
 			}
 		
 			});
-		//end of button
-		
-		//JLabel sadly does not pick up the changes.
-		//end of jlabel
 		
 		setResizable( false );
 		
@@ -57,7 +49,6 @@ public class clicktest extends JFrame implements ActionListener{
 					);
 		}
 		catch (Exception exc) {
-			//ignore error
 		}
 		
 	

@@ -1,86 +1,103 @@
+//concept GUI http://i.imgur.com/d37J5x6.png 
+// proj by Nigel
+import java.awt.Desktop;
+import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 
+import javax.swing.*;
 
-import java.util.Scanner;
+public class GUIprogram extends JFrame {
+	
 
-import javax.swing.JOptionPane;
+	public GUIprogram() {
 
-public class roughdraft {
-//introduction function
-	public void introduction() {
-		int k =1;
-		//START OF INTRODUCTION
-		while(k!=0)
-		{
 		
-		String name = JOptionPane.showInputDialog(null,"Welcome adventurer! Give me your name!","Access save code: 'paly'");
-	    String confirmname = JOptionPane.showInputDialog("Your name is "+name+". Is that correct? 'Yes' or 'No'?");
-	    
-	     if(confirmname.equalsIgnoreCase("yes"))
-	     {
-	    	//START OF RIVAL NAME
-	    	 String rivalname=JOptionPane.showInputDialog(null,"You have a friend that lives next to you! What is your friends name?");
-	    	 JOptionPane.showMessageDialog(null,"Ah, I see! Your friends name is " + rivalname+"! Your new adventure awaits, " + name+"!");
-	    	 k=0;
-	     }
-	     }
-		//END OF INTRODUCTION
-		//START OF CHOOSING POKEMEN
-		while(k==0)
-		{
-		String r = JOptionPane.showInputDialog("You make your way to Prof. Oak's office. \n What pokemon do you want? 'Charmander' , 'Bulbasaur' , or 'Squirtle'?");
-		
-	    if(r.equalsIgnoreCase("charmander"))
-	    {
-	    	r="Charmander";
-	    	String confirmsq = JOptionPane.showInputDialog("You have chosen " +r+", are you sure? 'Yes' or 'no'?");
-	   	 	if (confirmsq.equalsIgnoreCase("no")) {
-	   	 		k=0;
-	   	 	}
-	   	 	else if(confirmsq.equalsIgnoreCase("yes")){
-	   	 	JOptionPane.showMessageDialog(null, "You and your " + r +" will now spend the rest of your far journey together!");
-	   	 		k=1;
-	   	 	}
-	   	 	else {
-	   	 		k=0;
-	   	 	}
-	    }
-	    else if(r.equalsIgnoreCase("bulbasaur"))
-	    {
-	    	r="Bulbasaur";
-	    	String confirmsq = JOptionPane.showInputDialog("You have chosen " +r+", are you sure? 'Yes' or 'no'?");
-	   	 	if (confirmsq.equalsIgnoreCase("no")) {
-	   	 		k=0;
-	   	 	}
-	   	 	else if(confirmsq.equalsIgnoreCase("yes")){
-	   	 	JOptionPane.showMessageDialog(null, "You and your " + r +" will now spend the rest of your far journey together!");
-	   	 		k=1;
-	   	 	}
-	   	 	else {
-	   	 		k=0;
-	   	 	}
-	    }
-	    else if(r.equalsIgnoreCase("squirtle"))
-	    {
+		setTitle("Pokeemans");
+		setSize(450,125);
+		JLabel pageLabel = new JLabel("Pokeemuns game 0.1 ALPHA", (int) JLabel.CENTER_ALIGNMENT);
+		JLabel save = new JLabel("Enter your checkpoint access code if you have one.");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JTextField checkpoint = new JTextField(10);
+		FlowLayout flo = new FlowLayout();
+		setResizable( false );
+		setLayout(flo);
+		JButton checkpoints = new JButton("Play!");
+		checkpoints.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				JOptionPane.showMessageDialog(null, "Button not working");
+			
+			}
+		});
+		JButton test = new JButton("New Game!");
+		test.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				roughdraft testlol = new roughdraft();
+				testlol.introduction();
+				System.exit(0);
+			}
 
-	   	 	String confirmsq = JOptionPane.showInputDialog("You have chosen " +r+", are you sure? 'Yes' or 'no'?");
-	   	 	if (confirmsq.equalsIgnoreCase("no")) {
-	   	 		k=0;
-	   	 	}
-	   	 	else if(confirmsq.equalsIgnoreCase("yes")){
-	   	 	JOptionPane.showMessageDialog(null, "You and your " + r +" will now spend the rest of your far journey together!");
-	   	 		k=1;
-	   	 	}
-	   	 	else {
-	   	 		k=0;
-	   	 	}
-	    }
-	    else{
-	    JOptionPane.showMessageDialog(null,"Sorry, I didn't get that.");
-		k=0;
-	    }
+		
+				
+			});
+			
+
+		JButton test1 = new JButton("GitHub");
+		test1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e)
+            {
+            	try {
+					Desktop.getDesktop().browse(new URL("https://github.com/Compurnee/Pockeemuns").toURI());
+				} catch (IOException | URISyntaxException e1) {
+					e1.printStackTrace();
+				}
+            	
+            }
+        });
+		JButton exit = new JButton("Exit");
+		exit.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				System.exit(0);
+			}
+
+		
+				
+			});
+			
+		add(pageLabel);
+		add(test);
+		add(test1);
+		add(save);
+		add(checkpoint);
+		add(checkpoints);
+		add(exit);
+		
+		setVisible(true);
+	}
+	
+
+	private void setLookAndFeel() {
+		try {
+			UIManager.setLookAndFeel(
+					"com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"
+					);
 		}
-		//END OF CHOOSING POKEMEN.
+		catch (Exception exc) {
+			//ignore error
+		}
+		
+	}
+	public static void main(String[] args) {
+		GUIprogram frame = new GUIprogram();
 	}
 }
-
-	
